@@ -1,0 +1,168 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div style="font-size: 25px; font-weight: 300" class="raw mt-3">
+        <div class="col-12 text-center">
+            <span>Form is temporarily unavailable.</span>
+            <div>
+                <br> Use my contact information:
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                +380932324241
+                <br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                </svg>
+                pavlo.sivakov.work@gmail.com
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-3"></div>
+
+        <div class="col-6 d-flex justify-content-center">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="d-flex flex-column w-100 ">
+                    <legend style="font-size: 60px; font-weight: 300" class="text-center mb-5 mt-5">Let's Talk</legend>
+                    <div class="row">
+                        <div class="col-md-6 form-group mb-3">
+                            <label class="col-form-label">  {{ form.name.label }} *</label>
+                            {{ form.name(class="form-control", style="border-radius: 10px", placeholder="Your name") }}
+                            {#                        <label for="" class="col-form-label">Name *</label>#}
+                            {#                        <input type="text" class="form-control" name="name" id="name" placeholder="Your name">#}
+                        </div>
+                        <div class="col-md-6 form-group mb-3">
+                            <label class="col-form-label">{{ form.email.label }} *</label>
+                            {{ form.email(class="form-control", placeholder="Your email", style="border-radius: 10px") }}
+                            {#                        <label for="" class="col-form-label">Email *</label>#}
+                            {#                        <input type="email" class="form-control" name="email" id="email" placeholder="Your email">#}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3">
+                            {#                        <label for="budget" class="col-form-label">Subject</label>#}
+                            {#                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Your subject">#}
+                            <label class="col-form-label">{{ form.subject.label }} *</label>
+                            {{ form.subject(class="form-control", style="border-radius: 10px", placeholder="Your subject") }}
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-md-12 form-group mb-3">
+                            <label class="col-form-label">{{ form.message.label }} *</label>
+                            {{ form.message(class="form-control", cols="30", rows="4", style="border-radius: 10px", placeholder="Write your message") }}
+
+                            {#                        <label for="message" class="col-form-label">Message *</label>#}
+                            {#                        <textarea class="form-control" name="message" id="message" cols="30" rows="4"#}
+                            {#                                  placeholder="Write your message"></textarea>#}
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 form-group text-center">
+                        {{ form.submit(style="border-radius: 20px", class="btn btn-block btn-dark btn-primary py-2 px-4") }}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-3"></div>
+
+
+    </div>
+
+    {#    <div class="form h-80 contact-wrap p-5">#}
+    {#        <h3 class="text-center">Let's Talk</h3>#}
+    {#        <form class="mb-5" method="post">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-6 form-group mb-3">#}
+    {#                    <label class="col-form-label">  {{ form.name.label }} *</label>#}
+    {#                    {{ form.name(class="form-control", style="", placeholder="Your name") }}#}
+    {#                        <label for="" class="col-form-label">Name *</label>#}
+    {#                        <input type="text" class="form-control" name="name" id="name" placeholder="Your name">#}
+    {#                </div>#}
+    {#                <div class="col-md-6 form-group mb-3">#}
+    {#                    <label class="col-form-label">{{ form.email.label }} *</label>#}
+    {#                    {{ form.email(class="form-control", placeholder="Your email", style="") }}#}
+    {#                        <label for="" class="col-form-label">Email *</label>#}
+    {#                        <input type="email" class="form-control" name="email" id="email" placeholder="Your email">#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-12 form-group mb-3">#}
+    {#                        <label for="budget" class="col-form-label">Subject</label>#}
+    {#                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Your subject">#}
+    {#                    <label class="col-form-label">{{ form.subject.label }}</label>#}
+    {#                    {{ form.subject(class="form-control", style="", placeholder="Your subject") }}#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="row mb-5">#}
+    {#                <div class="col-md-12 form-group mb-3">#}
+    {#                    <label class="col-form-label">{{ form.message.label }} *</label>#}
+    {#                    {{ form.message(class="form-control", cols="30", rows="4", style="", placeholder="Write your message") }}#}
+    {##}
+    {#                        <label for="message" class="col-form-label">Message *</label>#}
+    {#                        <textarea class="form-control" name="message" id="message" cols="30" rows="4"#}
+    {#                                  placeholder="Write your message"></textarea>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="row justify-content-center">#}
+    {#                <div class="col-md-5 form-group text-center">#}
+    {#                    {{ form.submit(class="btn btn-block btn-primary rounded-0 py-2 px-4") }}#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </form>#}
+    {#    </div>#}
+
+
+
+
+
+
+
+
+
+
+
+
+    {#                    <legend class="text-center mb-5">Contact me</legend>#}
+    {#                    <div class="form-group">#}
+    {#                        <p class="text-center">  {{ form.name.label }}</p>#}
+    {#                        {{ form.name(class="w-100", style="border-radius: 10px", placeholder="Your name") }}#}
+    {#                    </div>#}
+    {#                    <div class="form-group">#}
+    {#                        <p class="text-center">{{ form.email.label }}</p>#}
+    {##}
+    {#                        {{ form.email(style="border-radius: 10px") }}#}
+    {#                    </div>#}
+    {#                    <div class="form-group">#}
+    {#                        <p class="text-center">{{ form.subject.label }}</p>#}
+    {##}
+    {##}
+    {#                        {{ form.subject(style="border-radius: 10px") }}#}
+    {#                    </div>#}
+    {#                    <div class="form-group">#}
+    {#                        <p class="text-center">{{ form.message.label }}</p>#}
+    {##}
+    {#                        {{ form.message(style="border-radius: 10px; height: 100px;") }}#}
+    {#                    </div>#}
+
+    {#                <div>#}
+    {#                    {{ form.submit(class="btn btn-outline-info") }}#}
+    {#                </div>#}
+    {#            </form>#}
+
+
+
+
+
+
+{% endblock %}
